@@ -1,0 +1,34 @@
+Samara Revoredo da Silva
+$ mkdir tarefa_git
+$ cd tarefa_git/
+$ git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead
+$ cd curso-branchs-ifrn-ead/
+$ echo "Olá Embarcatech!" > texto.txt
+$ git add texto.txt
+$ cat texto.txt
+Olá Embarcatech!
+$ git commit -m "Adiciona arquivo texto.txt"
+$ git checkout -b feature-1
+$ echo "Alteração para gerar conflito" > texto.txt
+$ git add texto.txt
+$ git commit -m "Alteração no arquivo txt na brach feature-1"
+$ git checkout main
+$ echo "nova alteração no arquivo txt para gerar conflito" > texto.txt
+$ git add texto.txt
+$ git commit -m "Modifica conteúdo do arquivo txt na brach main"
+$ git merge feature-1
+$ cat texto.txt
+<<<<<<< HEAD
+nova alteração no arquivo txt para gerar conflito
+=======
+Alteração para gerar conflito
+>>>>>>> feature-1
+$ nano texto.txt
+$ cat texto.txt
+OLÁ EMBARCATECH !!
+$ git add texto.txt
+$ git commit -m "Correção de conflito de merge entre main e feature-1"
+$ git checkout -b add-comandos
+nano comados.txt
+git add comandos.txt
+git commit -m "Adiciona comandos.txt com os comandos usados na tarefa"
